@@ -1,0 +1,14 @@
+{
+  "buildCommand": "vite build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install",
+  "functions": {
+    "api/**/*.ts": {
+      "includeFiles": "src/**"
+    }
+  },
+  "routes": [
+    { "src": "/api/events", "methods": ["GET", "POST", "OPTIONS"], "dest": "api/events.ts" },
+    { "src": "/api/cleanUp", "status": 404, "continue": false }
+  ]
+}

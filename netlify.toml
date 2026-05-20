@@ -1,0 +1,13 @@
+[build]
+  functions = "netlify/functions"
+  base = "/"
+  command = "vite build"
+  publish = "dist"
+
+[functions."cleanUp"]
+  schedule = "@daily"
+
+[[redirects]]
+  from = "/api/events"
+  to = "/.netlify/functions/events"
+  status = 200
